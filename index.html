@@ -3,10 +3,29 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nishad Patil | Portfolio</title>
+  <title>Nishad Patil | CSE Student, AI Developer & Athlete</title>
+  <meta name="description" content="Portfolio of Nishad Patil — Computer Science Engineering student at MIT-WPU, AI enthusiast, and full-stack developer. Discover latest projects, hackathons, and contact details." />
+  <meta name="keywords" content="Nishad Patil, NishadCodes18, Portfolio, Full-Stack Developer, AI Developer, CSE Student, MIT WPU, React, Python, Machine Learning" />
+  <meta name="author" content="Nishad Patil" />
+  <meta name="theme-color" content="#a50044" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nishadcodes18.github.io/" />
+  <meta property="og:title" content="Nishad Patil | CSE Student & AI Developer Portfolio" />
+  <meta property="og:description" content="Explore projects in AI, Web Development, and Competitive Coding by Nishad Patil." />
+  <meta property="og:image" content="https://i.ibb.co/Wv5n0wmX/IMG-2033-1.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nishad Patil | Portfolio" />
+  <meta name="twitter:description" content="Computer Science Engineering Student, Full-Stack Developer & AI Enthusiast." />
+  <meta name="twitter:image" content="https://i.ibb.co/Wv5n0wmX/IMG-2033-1.png" />
+
+  <!-- Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
@@ -474,6 +493,32 @@ h3{font-size:clamp(1.4rem,2.2vw,2rem);font-weight:900;letter-spacing:-0.02em;mar
 .bento-button:hover::after{transform:translateY(-50%) translate(2px,-2px)}
 .bento-button:hover{transform:translateY(-3px);box-shadow:5px 5px 0 rgba(0,0,0,0.25);background:rgba(255,255,255,0.2)}
 [data-theme="light"] .bento-button:hover{background:rgba(255,255,255,0.9);box-shadow:5px 5px 0 rgba(0,0,0,0.15)}
+
+/* Filter tabs */
+.filter-tab {
+  padding: 8px 20px;
+  border-radius: 50px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.filter-tab:hover {
+  color: var(--text-primary);
+  border-color: rgba(var(--accent-rgb), 0.4);
+}
+.filter-tab.active {
+  background: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 16px rgba(var(--accent-rgb), 0.35);
+}
+.bento-box.filter-hidden {
+  display: none !important;
+}
 
 /* box sizes */
 .bento-box.large  {grid-column:span 2;grid-row:span 2}
@@ -1035,45 +1080,101 @@ h3{font-size:clamp(1.4rem,2.2vw,2rem);font-weight:900;letter-spacing:-0.02em;mar
 <!-- ══════════════ WORK ══════════════ -->
 <div class="container2 reveal-section" id="work"><h2>My latest work</h2></div>
 
+<!-- PROJECT FILTER TABS -->
+<div class="project-filters reveal-section delay-100" style="display:flex; justify-content:center; gap:12px; margin-bottom:2rem; flex-wrap:wrap;">
+  <button class="filter-tab active" data-filter="all">All Projects</button>
+  <button class="filter-tab" data-filter="ai">AI / ML</button>
+  <button class="filter-tab" data-filter="web">Web Apps</button>
+</div>
+
 <div class="bento-container">
 
-  <div class="bento-box small reveal-section delay-100" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5" data-tilt-speed="400">
+  <div class="bento-box small reveal-section delay-100" data-category="web" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5" data-tilt-speed="400">
     <div class="bento-content color-1">
       <h3>PT Tracker CRM</h3>
       <div class="bento-tags"><span class="bento-tag">React</span><span class="bento-tag">Node</span><span class="bento-tag">DB</span></div>
-      <p>A comprehensive CRM platform designed for personal trainers to manage clients.</p>
-      <a href="https://pt-tracker-website-eta.vercel.app/auth/login?next=%2F" target="_blank" rel="noopener noreferrer" class="bento-button magnetic">View Demo</a>
+      <p>A comprehensive CRM platform designed for personal trainers to manage clients and scheduling.</p>
+      <div style="display:flex; gap:10px; margin-top:auto; flex-wrap:wrap;">
+        <a href="https://pt-tracker-website-eta.vercel.app/auth/login?next=%2F" target="_blank" rel="noopener noreferrer" class="bento-button magnetic">View Demo</a>
+        <button class="bento-button magnetic project-detail-btn" 
+          data-title="PT Tracker CRM" 
+          data-tags="React, Node.js, Database" 
+          data-desc="A full-featured client management platform for personal trainers. Tracks client workouts, payment cycles, and scheduling with a clean dashboard."
+          data-link="https://pt-tracker-website-eta.vercel.app/auth/login?next=%2F"
+          style="padding-right:18px;">Details</button>
+      </div>
     </div>
   </div>
 
-  <div class="bento-box small reveal-section delay-200" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5" data-tilt-speed="400">
+  <div class="bento-box small reveal-section delay-200" data-category="ai" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5" data-tilt-speed="400">
     <div class="bento-content color-2">
       <h3>S.U.T.R.A.</h3>
       <div class="bento-tags"><span class="bento-tag">AI</span><span class="bento-tag">Python</span><span class="bento-tag">ML</span></div>
-      <p>Moving Traffic, Saving Lives. An AI-powered traffic management system.</p>
-      <a href="https://github.com/NishadCodes18/S.U.T.R.A.-Moving-Traffic-Saving-Lives" target="_blank" rel="noopener noreferrer" class="bento-button magnetic">View Project</a>
+      <p>Moving Traffic, Saving Lives. An AI-powered traffic management & emergency routing system.</p>
+      <div style="display:flex; gap:10px; margin-top:auto; flex-wrap:wrap;">
+        <a href="https://github.com/NishadCodes18/S.U.T.R.A.-Moving-Traffic-Saving-Lives" target="_blank" rel="noopener noreferrer" class="bento-button magnetic">View Project</a>
+        <button class="bento-button magnetic project-detail-btn" 
+          data-title="S.U.T.R.A. AI Traffic System" 
+          data-tags="AI, Python, Computer Vision, ML" 
+          data-desc="S.U.T.R.A. leverages computer vision and AI traffic prediction algorithms to streamline traffic signals dynamically, prioritizing emergency vehicles like ambulances."
+          data-link="https://github.com/NishadCodes18/S.U.T.R.A.-Moving-Traffic-Saving-Lives"
+          style="padding-right:18px;">Details</button>
+      </div>
     </div>
   </div>
 
-  <div class="bento-box small reveal-section delay-300" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5" data-tilt-speed="400">
+  <div class="bento-box small reveal-section delay-300" data-category="web" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5" data-tilt-speed="400">
     <div class="bento-content color-3">
       <h3>Gym Site</h3>
       <div class="bento-tags"><span class="bento-tag">HTML</span><span class="bento-tag">CSS</span><span class="bento-tag">JS</span></div>
-      <p>A modern, responsive website template for a fitness center.</p>
-      <a href="https://nishadcodes18.github.io/Gym-Website/" target="_blank" rel="noopener noreferrer" class="bento-button magnetic">View Demo</a>
+      <p>A modern, responsive website template for a fitness center with high-converting UI.</p>
+      <div style="display:flex; gap:10px; margin-top:auto; flex-wrap:wrap;">
+        <a href="https://nishadcodes18.github.io/Gym-Website/" target="_blank" rel="noopener noreferrer" class="bento-button magnetic">View Demo</a>
+        <button class="bento-button magnetic project-detail-btn" 
+          data-title="Gym Website Template" 
+          data-tags="HTML5, CSS3, JavaScript" 
+          data-desc="A sleek dark-mode website designed for modern fitness studios. Includes dynamic membership tiers, class schedules, and interactive contact modal."
+          data-link="https://nishadcodes18.github.io/Gym-Website/"
+          style="padding-right:18px;">Details</button>
+      </div>
     </div>
   </div>
 
-  <div class="bento-box small reveal-section delay-400" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5" data-tilt-speed="400">
+  <div class="bento-box small reveal-section delay-400" data-category="web" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="5" data-tilt-speed="400">
     <div class="bento-content color-4">
       <h3>F1 Site</h3>
       <div class="bento-tags"><span class="bento-tag">HTML</span><span class="bento-tag">CSS</span><span class="bento-tag">JS</span></div>
-      <p>A simple, sleek website dedicated to Formula 1.</p>
-      <a href="https://nishadcodes18.github.io/F1-Website-Simple/" target="_blank" rel="noopener noreferrer" class="bento-button magnetic">View Demo</a>
+      <p>A simple, sleek website dedicated to Formula 1 race tracking & statistics.</p>
+      <div style="display:flex; gap:10px; margin-top:auto; flex-wrap:wrap;">
+        <a href="https://nishadcodes18.github.io/F1-Website-Simple/" target="_blank" rel="noopener noreferrer" class="bento-button magnetic">View Demo</a>
+        <button class="bento-button magnetic project-detail-btn" 
+          data-title="F1 Statistics Hub" 
+          data-tags="HTML5, CSS3, JavaScript" 
+          data-desc="A lightweight interactive fan web app celebrating Formula 1 racing, featuring driver profiles, team standings, and high-speed CSS animations."
+          data-link="https://nishadcodes18.github.io/F1-Website-Simple/"
+          style="padding-right:18px;">Details</button>
+      </div>
     </div>
   </div>
 
 </div><!-- /.bento-container -->
+
+<!-- PROJECT DETAIL MODAL -->
+<div class="modal-overlay" id="projectModal" aria-hidden="true">
+  <div class="modal-content" style="max-width:550px;">
+    <div class="modal-header">
+      <h2 id="projectModalTitle" style="font-size:1.6rem;">Project Title</h2>
+      <button class="modal-close" id="projectModalClose" aria-label="Close modal">&times;</button>
+    </div>
+    <div style="margin-bottom:16px;" id="projectModalTags"></div>
+    <p id="projectModalDesc" style="color:var(--text-secondary); line-height:1.7; margin-bottom:24px;"></p>
+    <div style="display:flex; justify-content:flex-end;">
+      <a id="projectModalLink" href="#" target="_blank" rel="noopener noreferrer" class="view-all-projects-button" style="padding:10px 24px; font-size:0.9rem;">
+        Open Project
+      </a>
+    </div>
+  </div>
+</div>
 
 <div class="view-all-projects-container reveal-section delay-500">
   <a href="https://github.com/NishadCodes18" target="_blank" rel="noopener noreferrer" class="view-all-projects-button magnetic">
@@ -1671,10 +1772,79 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.addEventListener("keydown", e => { if (e.key === "Escape" && contactModal.classList.contains("active")) closeContactModal(); });
 
+  /* ── PROJECT FILTERS ── */
+  const filterTabs = document.querySelectorAll(".filter-tab");
+  const bentoBoxes = document.querySelectorAll(".bento-box[data-category]");
+
+  filterTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      filterTabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      const category = tab.getAttribute("data-filter");
+
+      bentoBoxes.forEach(box => {
+        const boxCat = box.getAttribute("data-category");
+        if (category === "all" || boxCat === category) {
+          box.classList.remove("filter-hidden");
+        } else {
+          box.classList.add("filter-hidden");
+        }
+      });
+    });
+  });
+
+  /* ── PROJECT DETAIL MODAL ── */
+  const projectModal = document.getElementById("projectModal");
+  const projectModalClose = document.getElementById("projectModalClose");
+  const projectModalTitle = document.getElementById("projectModalTitle");
+  const projectModalTags = document.getElementById("projectModalTags");
+  const projectModalDesc = document.getElementById("projectModalDesc");
+  const projectModalLink = document.getElementById("projectModalLink");
+
+  function openProjectModal(data) {
+    if(!projectModal) return;
+    projectModalTitle.textContent = data.title;
+    projectModalDesc.textContent = data.desc;
+    projectModalLink.href = data.link;
+
+    // Render Tags
+    const tagsArr = data.tags.split(",");
+    projectModalTags.innerHTML = tagsArr.map(t => `<span class="bento-tag" style="margin-right:6px;">${t.trim()}</span>`).join("");
+
+    projectModal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeProjectModal() {
+    if(!projectModal) return;
+    projectModal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll(".project-detail-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      openProjectModal({
+        title: btn.getAttribute("data-title"),
+        tags: btn.getAttribute("data-tags"),
+        desc: btn.getAttribute("data-desc"),
+        link: btn.getAttribute("data-link")
+      });
+    });
+  });
+
+  if(projectModalClose) projectModalClose.addEventListener("click", closeProjectModal);
+  if(projectModal) projectModal.addEventListener("click", e => { if (e.target === projectModal) closeProjectModal(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && projectModal && projectModal.classList.contains("active")) closeProjectModal(); });
+
   /* ── EMAILJS INITIALIZATION ── */
+  const EMAILJS_PUBLIC_KEY  = (typeof process !== "undefined" && process.env && process.env.NEXT_PUBLIC_EMAILJS_KEY) || (window.ENV && window.ENV.EMAILJS_PUBLIC_KEY) || "zBvEQWk_3dspG80Kv";
+  const EMAILJS_SERVICE_ID  = (typeof process !== "undefined" && process.env && process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID) || (window.ENV && window.ENV.EMAILJS_SERVICE_ID) || "service_799i3sb";
+  const EMAILJS_TEMPLATE_ID = (typeof process !== "undefined" && process.env && process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID) || (window.ENV && window.ENV.EMAILJS_TEMPLATE_ID) || "portfolioform";
+
   if (window.emailjs) {
     emailjs.init({
-      publicKey: "zBvEQWk_3dspG80Kv" // Replace with your actual EmailJS Public Key
+      publicKey: EMAILJS_PUBLIC_KEY
     });
   }
 
@@ -1709,8 +1879,7 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       // If EmailJS SDK is loaded, send via EmailJS
       if (window.emailjs) {
-        // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS Service & Template IDs
-        await emailjs.send("service_799i3sb", "portfolioform", templateParams);
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
       } else {
         // Fallback to Web3Forms API if EmailJS is not configured/loaded
         const response = await fetch("https://api.web3forms.com/submit", {
